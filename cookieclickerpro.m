@@ -11,7 +11,7 @@ clear sound
 %% initial game setup
 
 % create game engine
-engine = simpleGameEngine("CookieClicker.png", 84, 84, 5, [173 216 230]);
+engine = simpleGameEngine("asse/CookieClicker.png", 84, 84, 5, [173 216 230]);
 
 % store fps to be used by while loop
 frameRate = 30;
