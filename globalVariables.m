@@ -49,5 +49,10 @@ classdef globalVariables
         mainMenu = 19 * ones(5);
         gameScene = 19 * ones(9);
         shopScene = 19 * ones(9);
+
+        % text variables for editing purposes
+        editableText = text();
+        textW = 0;
+        textH = 0;
     end
 end

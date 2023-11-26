@@ -20,6 +20,9 @@ function toGameScene(engine, data)
     pos = get(gcf, 'Position'); % gives x left, y bottom, width, height
     width = pos(3);
     height = pos(4);
+
+    data.textW = width;
+    data.textH = height;
     
     % show number of each upgrade
     textHeights = linspace(1, height * 5, 9) + 180;
@@ -28,7 +31,7 @@ function toGameScene(engine, data)
     end
     
     % cookies and cookies/sec text
-    text(width/3, height/3, data.numCookies + " Cookies", FontSize=24);
+    %text(width/3, height/3, data.numCookies + " Cookies", FontSize=24);
     text(width*2, height/3, data.cookieRate + " Cookies/sec", FontSize=24);
     
     % shop button
