@@ -1,0 +1,42 @@
+{
+    "cookieclicker": [
+        {
+            "name": "anna",
+            "score": 23818
+        },
+        {
+            "name": "Christian L",
+            "score": 347
+        }
+    ],
+    "papaspizzeria": [
+        {
+            "name": "Grace",
+            "score": 13
+        },
+        {
+            "name": "anna",
+            "score": 9
+        }
+    ],
+    "dungeoncrawler": [
+        {
+            "name": "Christian L",
+            "score": 581.392
+        },
+        {
+            "name": "Chase Johnson",
+            "score": 599.24
+        }
+    ],
+    "tictactoe": [
+        {
+            "name": "Chase Johnson",
+            "score": 100
+        },
+        {
+            "name": "Grace",
+            "score": 99
+        }
+    ]
+}
