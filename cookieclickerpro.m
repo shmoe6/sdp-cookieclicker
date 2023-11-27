@@ -28,7 +28,7 @@ oldMousePos = [0, 0];
 global mousePos;
 
 % hold the text outside of loop
-cookiesText = text();
+cookiesText = text(738/3, 695/3, " ", FontSize=24);
 
 %% game manager code
 % this while loop checks to see the current scene and handles events 
@@ -49,6 +49,7 @@ while true
         % prompt user for input, following the direction on screen
         disp("MAIN MENU!");
         getKeyboardInput(engine);
+        pause(0.1);
 
         % after keyboard input received, start game
         data.currentScreen = "Game Scene";
@@ -74,15 +75,18 @@ while true
                 toShopScene(engine, data);
             end
         end
-        
-        delete(cookiesText);
+
         cookiesText = text(738/3, 695/3, data.numCookies + " Cookies", FontSize=24);
+        
         if (curFrame == 30)
-            data.numCookies = data.numCookies + data.cookieRate;
+            temp = data.numCookies; 
+            temp2 = data.cookieRate;
+            temp3 = temp + temp2;
+            data.numCookies = temp3;
         end
+
     %% shop scene control
     elseif (data.currentScreen == "Shop Scene")
-        delete(cookiesText);
         % handle mouse click only if the mouse has changed positions
         if (oldMousePos ~= mousePos)
             disp("x = " + mousePos(1) + " y = " + mousePos(2));

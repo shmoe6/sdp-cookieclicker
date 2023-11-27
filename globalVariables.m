@@ -42,7 +42,7 @@ classdef globalVariables
         %% gamestate data
         % store cookie statistics
         numCookies = 0;
-        cookieRate = 0;
+        cookieRate = 1;
 
         % variables to hold each screen
         % 19 is empty sprite
