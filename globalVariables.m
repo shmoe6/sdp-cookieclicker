@@ -41,7 +41,7 @@ classdef globalVariables
         
         %% gamestate data
         % store cookie statistics
-        numCookies = 0;
+        numCookies = 0.0;
         cookieRate = 1;
 
         % variables to hold each screen
