@@ -2,7 +2,7 @@
 %% author: anna bontempo
 
 %% loads the scene where clicking gameplay will take place
-function toGameScene(engine, data)
+function toGameScene(engine, data, numUpgrades)
     % clear previous figure
     clf
     
@@ -27,12 +27,12 @@ function toGameScene(engine, data)
     % show number of each upgrade
     textHeights = linspace(1, height * 5, 9) + 180;
     for i = 1:8
-        text(width * 4.6, textHeights(i), int2str(data.numUpgrades(i)), FontSize=24);
+        text(width * 4.6, textHeights(i), int2str(numUpgrades(i)), FontSize=24);
     end
     
     % cookies and cookies/sec text
     %text(width/3, height/3, data.numCookies + " Cookies", FontSize=24);
-    text(width*2, height/3, data.cookieRate + " Cookies/sec", FontSize=24);
+    %text(width*2, height/3, data.cookieRate + " Cookies/sec", FontSize=24);
     
     % shop button
     text(width * 4.2, textHeights(9) - 25, "SHOP", FontWeight='bold', FontSize=24);

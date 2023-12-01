@@ -31,19 +31,6 @@ function dataOut = initializeData(dataIn)
     dataOut.research = 17;
     dataOut.monopoly = 18;
 
-    %% upgrade variables
-    % set up variables to hold number, base cost, percent boost of each
-    % done in an array, in the following order:
-    % [cursor, powerClick, chef, tree, mine, factory, research, monopoly]
-    dataOut.numUpgrades = zeros(1, 8);
-    dataOut.baseCosts = [15 100 1100 12000 130000 1400000 20000000 33000000];
-    dataOut.baseBoost = [.1 1 8 47 260 1400 7800 44000];
-    
-    %% gamestate data
-    % store cookie statistics
-    dataOut.numCookies = 0;
-    dataOut.cookieRate = 0;
-
     % variables to hold each screen
     % 19 is empty sprite
     dataOut.mainMenu = 19 * ones(5);
@@ -51,6 +38,4 @@ function dataOut = initializeData(dataIn)
     dataOut.shopScene = 19 * ones(9);
 
     dataOut.currentScreen = "Main Menu";
-
-    dataIn = dataOut;
 end

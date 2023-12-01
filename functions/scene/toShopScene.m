@@ -2,7 +2,7 @@
 %% author: anna bontempo
 
 %% updates the current screen to the shop screen.
-function toShopScene(engine, data)
+function toShopScene(engine, data, numUpgrades, baseCosts, baseBoost)
     % clear previous figure
     clf
     
@@ -21,9 +21,9 @@ function toShopScene(engine, data)
     % show number of each upgrade
     textHeights = linspace(1, height * 5, 9) + 180;
     for i = 1:8
-        text(width, textHeights(i + 1), int2str(data.numUpgrades(i)), FontSize=24);
-        text(width * 2, textHeights(i + 1), int2str(data.baseCosts(i)), FontSize=24);
-        text(width * 3.25, textHeights(i + 1), string(data.baseBoost(i)), FontSize=24);
+        text(width, textHeights(i + 1), int2str(numUpgrades(i)), FontSize=24);
+        text(width * 2, textHeights(i + 1), string(floor(baseCosts(i) * 1.15^(numUpgrades(i) - 1))), FontSize=24);
+        text(width * 3.25, textHeights(i + 1), string(baseBoost(i)), FontSize=24);
         % will become the buy button
         text(width * 4.5, textHeights(i + 1), "BUY", FontSize=24, FontWeight="bold");
     end

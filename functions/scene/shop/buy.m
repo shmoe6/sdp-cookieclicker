@@ -3,20 +3,26 @@
 
 %% function to buy a specified upgrade and change the "static" values
 %MAY NOT WORK........
-function buy(data, orderNum)
+function [upgrades, bal, rate] = buy(baseCosts, numUpgrades, numCookies, orderNum, baseBoost, cookieRate)
+    % set default return parameter values
+    upgrades = numUpgrades;
+    rate = cookieRate;
     % product base cost
-    C = data.baseCosts(orderNum);
-    % number of product already owned
-    n = data.numUpgrades(orderNum);
+    C = baseCosts(orderNum);
+    % number of product already owneds
+    n = numUpgrades(orderNum);
     % get current amount of cookies
-    bal = data.numCookies;
+    bal = numCookies;
 
     % calculate price
     price = floor(C * 1.15^(n-1));
 
-    % adjust values accordingly
-    data.numCookies = bal - price;
-    data.numUpgrades(orderNum) = n;
-
-    disp("ENDOFMETHOD");
+    % make sure player can afford
+    if (bal >= price)
+        % deduct cost
+        bal = bal - price;
+        % add upgrade to player's data
+        upgrades(orderNum) = n + 1;
+        rate = cookieRate + baseBoost(orderNum);
+    end
 end
